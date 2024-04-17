@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="text-center">Task of {{ task.name }}</h1>
+  <div *ngIf="taskId">
+    <input
+      #newName
+      type="text"
+      class="form-control"
+      placeholder="name"
+      [(ngModel)]="task.name"
+    />
+    <textarea
+      #newDescription
+      class="form-control"
+      [(ngModel)]="task.description"
+    ></textarea>
+    <input #newDate type="date" [(ngModel)]="task.dueDate" />
+    <div>
+      <button
+        class="btn btn-primary"
+        (click)="updateTask(newName, newDescription, newDate)"
+        routerLink="/"
+      >
+        Update
+      </button>
+      <button class="btn btn-danger" (click)="taskDelete()">Delete</button>
+      <a class="btn btn-info" routerLink="/">cancel</a>
+    </div>
+  </div>
+</div>

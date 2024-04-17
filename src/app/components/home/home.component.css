@@ -1,0 +1,13 @@
+* {
+  margin: 10px;
+}
+label {
+  margin-left: 0;
+}
+.del-btn {
+  float: right;
+}
+.add-task-btn {
+  margin: 20px;
+  margin-left: 0;
+}

@@ -1,0 +1,7 @@
+* {
+  margin: 20px;
+}
+.checkbox,
+button {
+  margin-left: 0;
+}

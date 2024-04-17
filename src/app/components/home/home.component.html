@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Task list</h1>
+  <div>
+    <a class="add-task-btn btn btn-secondary" routerLink="/add"> add</a>
+  </div>
+
+  <div *ngIf="task.tasks.length == 0">
+    <p>No tasks to do</p>
+  </div>
+  <div *ngIf="task.tasks.length != 0">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let task of task.tasks; index as i">
+        <input
+          *ngIf="task.status == 'pending'"
+          type="checkbox"
+          (click)="markDone(i)"
+        />
+        <label for="checkbox" [style.color]="task.color">
+          {{ task.status }}
+        </label>
+        <a [routerLink]="['task', i]">
+          {{ task.name }}
+        </a>
+        <button class="del-btn btn btn-danger" (click)="deleteTask(i)">
+          Delete
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

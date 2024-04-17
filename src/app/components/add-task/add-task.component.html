@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Add new task</h1>
+  <input #taskName type="text" class="form-control" placeholder="name" />
+  <textarea
+    #taskDescription
+    class="form-control"
+    placeholder="description"
+  ></textarea>
+  <div>
+    <input class="checkbox" #taskDate type="date" />
+  </div>
+  <button
+    class="btn btn-success"
+    (click)="saveTask(taskName, taskDescription, taskDate)"
+    routerLink="/"
+  >
+    save
+  </button>
+  <a class="btn btn-primary" routerLink="/">cancel</a>
+</div>
